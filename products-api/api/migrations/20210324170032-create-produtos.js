@@ -12,7 +12,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       preco: {
-        type: Sequelize.FLOAT
+        type: Sequelize.DECIMAL(10, 2)
+      },
+      categoria_id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'Categorias', key: 'id' }
       },
       createdAt: {
         allowNull: false,
